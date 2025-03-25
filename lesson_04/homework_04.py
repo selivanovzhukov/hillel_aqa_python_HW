@@ -1,3 +1,6 @@
+import re
+import string
+
 adwentures_of_tom_sawer = """\
 Tom gave up the brush with reluctance in his .... face but alacrity
 in his heart. And while
@@ -24,35 +27,62 @@ rolling in wealth."""
 """ Дані у строці adwentures_of_tom_sawer розбиті випадковим чином, через помилку.
 треба замінити кінець абзацу на пробіл .replace("\n", " ")"""
 
+task_01 = adwentures_of_tom_sawer.replace("\n", " ")
+print(task_01)
+
 # task 02 ==
 """ Замініть .... на пробіл
 """
+
+task_02 = task_01.replace("....", "")
+print(task_02)
 
 # task 03 ==
 """ Зробіть так, щоб у тексті було не більше одного пробілу між словами.
 """
 
+task_03 = " ".join(task_02.split())
+print("task3",task_03)
 
 # task 04
-""" Виведіть, скількі разів у тексті зустрічається літера "h"
+""" Виведіть, скільки разів у тексті зустрічається літера "h"
 """
 
+task_04 = task_03.count("h")
+print(task_04)
 
 # task 05
 """ Виведіть, скільки слів у тексті починається з Великої літери?
 """
 
+task_05 =  task_03.split()
+cleaned_words = [word.strip(string.punctuation) for word in task_05]
+capitalized_words = [word for word in cleaned_words if word and word[0].isupper()]
+print(len(capitalized_words))
+print(cleaned_words)
 
 # task 06
 """ Виведіть позицію, на якій слово Tom зустрічається вдруге
 """
 
+task_06_first_index = task_03.find("Tom")
+if task_06_first_index != -1:
+    second_index = task_03.find("Tom", task_06_first_index + 1)
+    if second_index != -1:
+        print(f'Слово том вдруге зустрічається на позиції: {second_index}')
+    else:
+        print("Tom зустрічається лише раз")
+else:
+    print("Не знайдено")
 
 # task 07
 """ Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
-adwentures_of_tom_sawer_sentences = None
+
+adwentures_of_tom_sawer_sentences = re.split(r'[.!?]', task_03)
+adwentures_of_tom_sawer_sentences = [sentence.strip() for sentence in adwentures_of_tom_sawer_sentences if sentence.strip()]
+print(adwentures_of_tom_sawer_sentences)
 
 # task 08
 """ Виведіть четверте речення з adwentures_of_tom_sawer_sentences.
@@ -60,11 +90,24 @@ adwentures_of_tom_sawer_sentences = None
 """
 
 
+for sentence in adwentures_of_tom_sawer_sentences[:3]:
+    print(sentence.lower())
+
 # task 09
 """ Перевірте чи починається якесь речення з "By the time".
 """
 
+task_09 = False
+for sentence in adwentures_of_tom_sawer_sentences:
+    if sentence.startswith("By the time"):
+        task_09 = True
+        break
+print(task_09)
 
 # task 10
 """ Виведіть кількість слів останнього речення з adwentures_of_tom_sawer_sentences.
 """
+
+task_10 = adwentures_of_tom_sawer_sentences[-1]
+wrds_in_last_sentence = task_10.split()
+print(len(wrds_in_last_sentence))
