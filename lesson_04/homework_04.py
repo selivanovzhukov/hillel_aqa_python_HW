@@ -57,7 +57,7 @@ print(task_04)
 
 task_05 =  task_03.split()
 cleaned_words = [word.strip(string.punctuation) for word in task_05]
-capitalized_words = [word for word in cleaned_words if word and word[0].isupper()]
+capitalized_words = [word for word in cleaned_words if word and word[0].istitle()]
 print(len(capitalized_words))
 print(cleaned_words)
 
@@ -66,14 +66,9 @@ print(cleaned_words)
 """
 
 task_06_first_index = task_03.find("Tom")
-if task_06_first_index != -1:
-    second_index = task_03.find("Tom", task_06_first_index + 1)
-    if second_index != -1:
-        print(f'Слово том вдруге зустрічається на позиції: {second_index}')
-    else:
-        print("Tom зустрічається лише раз")
-else:
-    print("Не знайдено")
+second_index = task_03.find("Tom", task_06_first_index + 1)
+print(f'Слово том вдруге зустрічається на позиції: {second_index}')
+
 
 # task 07
 """ Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
@@ -89,9 +84,8 @@ print(adwentures_of_tom_sawer_sentences)
 Перетворіть рядок у нижній регістр.
 """
 
-
-for sentence in adwentures_of_tom_sawer_sentences[:3]:
-    print(sentence.lower())
+sentence_4 =  adwentures_of_tom_sawer_sentences[3]
+print(sentence_4.lower())
 
 # task 09
 """ Перевірте чи починається якесь речення з "By the time".
@@ -101,7 +95,6 @@ task_09 = False
 for sentence in adwentures_of_tom_sawer_sentences:
     if sentence.startswith("By the time"):
         task_09 = True
-        break
 print(task_09)
 
 # task 10
