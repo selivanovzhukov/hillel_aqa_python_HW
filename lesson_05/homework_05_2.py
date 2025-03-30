@@ -36,6 +36,7 @@ print(new_people_records[6], new_people_records[10], new_people_records[13])
 for i in indexes:
   if new_people_records[i][2] >= 30:
     people_above_30.append(new_people_records[i])
-print(people_above_30)
-# for people in people_above_30:
-#   print(people)
+if len(people_above_30) == len(indexes):
+  print(True, people_above_30)
+else:
+  print(False, people_above_30)
