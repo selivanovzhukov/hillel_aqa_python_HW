@@ -103,18 +103,17 @@ homework_06_1
 # else: print(False)
 """
 
-def unique_symbols_count():
-    """User types any text"""
-    list_of_symbols = input('Enter some text:')
+def unique_symbols_count(symbols_list: list):
     """Collecting only unique symbols"""
-    unique_symbols = set(list_of_symbols)
+    unique_symbols = set(symbols_list)
     """Counting unique symbols and comparing ot the set condition"""
     if len(unique_symbols) >= 10:
         print(True)
     else:
         print(False)
 
-unique_symbols_count()
+list_of_symbols = list(input('Enter some text:'))
+unique_symbols_count(list_of_symbols)
 
 # task 8
 """
