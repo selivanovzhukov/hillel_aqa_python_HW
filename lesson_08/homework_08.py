@@ -1,4 +1,3 @@
-
 def element_sum(list_of_elements: list):
     """Summing elements in the list of strings"""
     for item in list_of_elements:
