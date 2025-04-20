@@ -1,17 +1,22 @@
 import unittest
-from homeworks import element_sum, sum_of_even_nums, unique_symbols_count
+from lesson_09.homeworks09 import element_sum, sum_of_even_nums, unique_symbols_count
 
 
-class TestHomework(unittest.TestCase):
+class TestElementSum(unittest.TestCase):
 
     def test_element_sum_valid_input(self):
-        element_sum(["1,2,3", "4,5,6"])
+        self.assertEqual(element_sum(["1,2,3", "4,5,6"]), [6, 15])
 
     def test_element_sum_invalid_input(self):
-        element_sum(["1,a,3"])
+        self.assertEqual(element_sum(["1,a,3"]), ["Не можу це зробити"])
+
+    def test_element_sum_mixed_input(self):
+        self.assertEqual(element_sum(["1,2", "g,o", "3,4"]), [3, "Не можу це зробити", 7])
 
     def test_element_sum_empty_list(self):
-        element_sum([])
+        self.assertEqual(element_sum([]), [])
+
+class TestSumEvenNums(unittest.TestCase):
 
     def test_sum_of_even_nums_valid_input(self):
         self.assertEqual(sum_of_even_nums([1, 2, 3, 4, 5, 6]), 12)
@@ -21,6 +26,8 @@ class TestHomework(unittest.TestCase):
 
     def test_sum_of_even_nums_empty_list(self):
         self.assertEqual(sum_of_even_nums([]), 0)
+
+class TestUniqueSymbols(unittest.TestCase):
 
     def test_unique_symbols_count_true(self):
         self.assertTrue(unique_symbols_count(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']))
