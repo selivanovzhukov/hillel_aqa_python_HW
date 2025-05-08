@@ -56,4 +56,14 @@
       <incoming>0x6666</incoming>
     </timingExbytes>
   </group>
+
+  <group>
+    <number>6</number>
+    <name>BBK</name>
+    <isMessage/>
+    <timingExbytes>
+      <micro>0x4454</micro>
+      <incoming>0x6566</incoming>
+    </timingExbytes>
+  </group>
 </groups>

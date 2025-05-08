@@ -4,8 +4,7 @@ import xml.etree.ElementTree as ET
 logging.basicConfig(
     filename='group_search.log',
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
+    format='%(asctime)s - %(levelname)s - %(message)s')
 
 def find_incoming_by_group_number(xml_file_path, target_number=None):
     try:
@@ -34,5 +33,4 @@ def find_incoming_by_group_number(xml_file_path, target_number=None):
         return None
 
 
-# Приклад виклику
 find_incoming_by_group_number(r"\lesson_13\work_with_xml\groups.xml", target_number=4)
