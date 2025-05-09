@@ -1,14 +1,17 @@
 """Homework 8"""
 def element_sum(list_of_elements: list):
     """Summing elements in the list of strings"""
+    result = []
     for item in list_of_elements:
         try:
             elements = (item.split(','))
             sum_of_elements = sum(int(num) for num in elements)
-            print(sum_of_elements)
+            result.append(sum_of_elements)
         except ValueError:
-            print("Не можу це зробити")
+            result.append("Не можу це зробити")
+    return result
 
+element_sum(["1,2,3","4,5,6"])
 
 """Homework 6.4"""
 def sum_of_even_nums(num_list: list):
