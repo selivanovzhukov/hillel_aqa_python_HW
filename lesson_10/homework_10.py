@@ -21,13 +21,13 @@ def log_event(username: str, status: str):
     log_message = f"Login event - Username: {username}, Status: {status}"
 
     # Створення та налаштування логера
-    logging.basicConfig(
-        filename='login_system.log',
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s %(message)s',
-        force=True
-        )
     logger = logging.getLogger("log_event")
+    logger.setLevel(logging.INFO)
+    file_handler = logging.FileHandler("login_system.log")
+    file_handler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
 
     # Логування події
     if status == "success":
