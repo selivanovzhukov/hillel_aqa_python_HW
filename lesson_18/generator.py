@@ -4,8 +4,8 @@ def generate_even_nums(n):
             yield i
 
 
-for num in generate_even_nums(10):
-    print("Even numbers till 10: ", num)
+# for num in generate_even_nums(10):
+#     print("Even numbers till 10: ", num)
 
 
 def generate_fibonacci(n):
@@ -15,6 +15,6 @@ def generate_fibonacci(n):
         yield a
         a, b = b, a + b
 
-for num in generate_fibonacci(10):
-    print("Fibonacci numbers till 10: ", num)
+# for num in generate_fibonacci(10):
+#     print("Fibonacci numbers till 10: ", num)
 
