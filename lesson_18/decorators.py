@@ -14,7 +14,7 @@ def log_function_calls(func):
         return result
     return wrapper
 
-def handel_exeptions(default_value=None):
+def handle_exceptions(default_value=None):
     def decorator(func):
         def wrapper(*args, **kwargs):
             try:
