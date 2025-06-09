@@ -48,7 +48,7 @@ def time_log_analyze(filename):
 
         if 31 < time_diff < 33:
             logger.warning(f'Heartbeat {time_diff:.2f} sec. between {current_timestamp} and {next_timestamp}')
-        elif time_diff >= 30:
+        elif time_diff >= 33:
             logger.error(f'Heartbeat {time_diff:.2f} sec. between {current_timestamp} and {next_timestamp}')
 
 if __name__ == '__main__':
