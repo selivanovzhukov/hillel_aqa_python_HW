@@ -46,5 +46,13 @@ class EvenNumIter:
         raise StopIteration
 
 
-for num in EvenNumIter(10):
-    print(num)
+if __name__ == "__main__":
+    my_list = list(generate_even_nums(10))
+    for item in ReverseList(my_list):
+        print(item)
+
+    reversed_list = list(ReverseList(my_list))
+    print(reversed_list)
+
+    for num in EvenNumIter(10):
+        print(num)
